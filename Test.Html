@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Test</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
+        <script src='quiz.js'></script>
+    </head>
+    <body>
+        <div class="header">
+            <div class="title">
+                <h1>Test de Enfermedad</h1>
+            </div>
+        </div>
+
+        <div class="page">
+            <div class="carril">
+                <div class="instrucciones">
+                    <div class="txt">
+                        <h2>Seleccione si o no, a la respuesta con la que mejor se identifique</h2>
+                        <p>Conteste sinceramente las preguntas</p>
+                    </div>
+                </div>
+
+                <div class="preguntas">
+                    <div class="p1">
+                        <div class="txt">
+                            <p>P-1. ¿Has experimentado problemas de ansiedad? </p>
+                            <input type="radio" name="p1" id="correct1-1"> Si
+                            <input type="radio" name="p1" id="correct1"> No
+                            <br><br>
+                        </div>
+                    </div>
+
+                    <div class="p2">
+                        <div class="txt">
+                            <p>P-2. ¿Has experimentado problemas de depresión? </p>
+                            <input type="radio" name="p2" id="correct2-1"> Si
+                            <input type="radio" name="p2" id="correct2"> No
+                            <br><br>
+                        </div>
+                    </div>
+
+                    <div class="p3">
+                        <div class="txt">
+                        <p>P-3. ¿Has experimentado ideas suicidas? </p>
+                        <input type="radio" name="p3" id="correct3-1"> Si
+                        <input type="radio" name="p3" id="correct3"> No
+                        <br><br></div>
+                    </div>
+
+                    <div class="p4">
+                        <div class="txt">
+                        <p>P-4. ¿Estás convencido de estar quedándote sin sangre o no tener sangre en el cuerpo? </p>
+                        <input type="radio" name="p4" id="correct4-1"> Si
+                        <input type="radio" name="p4" id="correct4"> No
+                        <br><br></div>
+                    </div>
+
+                    <div class="p5">
+                        <div class="txt">
+                        <p>P-5. ¿Has experimentado la muerte en ti mismo? </p>
+                        <input type="radio" name="p5" id="correct5-1"> Si
+                        <input type="radio" name="p5" id="correct5"> No
+                        <br><br></div>
+                    </div>
+
+
+                    <div class="p6">
+                        <div class="txt">
+                        <p>P-6. ¿Te has mutilado un dedo de manera conciente? </p>
+                        <input type="radio" name="p6" id="correct6-1"> Si
+                        <input type="radio" name="p6" id="correct6"> No
+                        <br><br></div>
+                    </div>
+                    <div class="p7">
+                        <div class="txt">
+                        <p>P-7. ¿Te consideras antisocial? </p>
+                        <input type="radio" name="p7" id="correct7-1"> Si
+                        <input type="radio" name="p7" id="correct7"> No
+                        <br><br></div>
+                    </div>
+                    <div class="p8">
+                        <div class="txt">
+                        <p>P-8. ¿Disfrutas ver animales muertos? </p>
+                        <input type="radio" name="p8" id="correct8-1"> Si
+                        <input type="radio" name="P8" id="correct8"> No
+                        <br><br></div>
+                    </div>
+                    <div class="p9">
+                        <div class="txt">
+                        <p>P-9. ¿Disfrutas ver personas muertas? </p>
+                        <input type="radio" name="p9" id="correct9-1"> Si
+                        <input type="radio" name="P9" id="correct9"> No
+                        <br><br></div>
+                    </div>
+                    
+                </div>
+                <input class="btn" type="submit" name="submit" value="Enviar" bt-lg onclick="result()">
+            </div>
+        </div>
+    </body>
+</html>
+ 
+<style>
+*{
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: #f5d5a4;
+}
+
+.title{
+    margin-top: 2%;
+    display: inline;
+}
+.header{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+h1{
+    display: inline;
+}
+h2, p{
+    background-color: white;
+}
+
+
+.page{
+    background-color: #ece0ff;
+}
+.carril{
+    margin-left:10%;
+    margin-right:10%;
+}
+
+.instrucciones{
+    background-color: #ffffff;
+    margin-bottom: 3%;
+    border: 3px solid rgba(202, 96, 255, 0.479);
+    box-shadow: 10px 5px 5px rgba(63, 16, 87, 0.479);
+    border-radius: 10px;
+}
+
+.txt{
+    margin-left: 8px;
+    background-color: #ffffff;
+    
+}
+.p1, .p2, .p3, .p4, .p5, .p6, .p7, .p8, .p9, .p10{
+    background-color: white;
+    margin-bottom: 3%;
+    border: 3px solid rgba(202, 96, 255, 0.479);
+    box-shadow: 10px 5px 5px rgba(63, 16, 87, 0.479);
+    border-radius: 20px;
+}
+
+
+.btn{
+    padding: 2% 4%;
+    font-size: large;
+    background-color: #ffffff;
+    border-color: rgb(133, 255, 153);
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.input{
+    font-size: small;
+}
+</style>
+
+<script>
+    function result() {
+    var score = 0;
+    var score2 = 0;
+
+    
+    
+    if (document.getElementById('correct1').checked) {
+        score++;
+    } else if (document.getElementById('correct1-1').checked) {
+        score2++;}
+   
+
+    if (document.getElementById('correct2').checked) {
+        score++;
+    } else if (document.getElementById('correct2-1').checked) {
+        score2++; }
+   
+
+    if (document.getElementById('correct3').checked) {
+        score++;
+    } else if (document.getElementById('correct3-1').checked) {
+        score2++; }
+  
+
+    if (document.getElementById('correct4').checked) {
+        score++;
+    } else if (document.getElementById('correct4-1').checked) {
+        score2++; }
+   
+
+    if (document.getElementById('correct5').checked) {
+        score++;
+    } else if (document.getElementById('correct5-1').checked) {
+        score2++; }
+  
+    if (document.getElementById('correct6').checked) {
+        score++;
+    } else if (document.getElementById('correct6-1').checked) {
+        score2++; }
+
+    if (document.getElementById('correct7').checked) {
+        score++;
+    } else if (document.getElementById('correct7-1').checked) {
+        score2++; }
+
+    if (document.getElementById('correct8').checked) {
+        score++;
+    } else if (document.getElementById('correct8-1').checked) {
+        score2++; }
+
+    if (document.getElementById('correct9').checked) {
+        score++;
+    } else if (document.getElementById('correct9-1').checked) {
+        score2++; }
+
+    
+    if (score2>score) {
+        alert("Tu resultado es que tienes el síndrome de cotard")
+    }else if (score>score2) {
+        alert("Según el test no padeces el síndrome de cotard")
+    }
+
+    document.getElementById('correct1-1').checked = false;
+    document.getElementById('correct1').checked = false;
+    document.getElementById('correct2-1').checked = false;
+    document.getElementById('correct2').checked = false;
+    document.getElementById('correct3-1').checked = false;
+    document.getElementById('correct3').checked = false;
+    document.getElementById('correct4-1').checked = false;
+    document.getElementById('correct4').checked = false;
+    document.getElementById('correct5-1').checked = false;
+    document.getElementById('correct5').checked = false;
+    document.getElementById('correct6-1').checked = false;
+    document.getElementById('correct6').checked = false;
+    document.getElementById('correct7-1').checked = false;
+    document.getElementById('correct7').checked = false;
+    document.getElementById('correct8-1').checked = false;
+    document.getElementById('correct8').checked = false;
+    document.getElementById('correct9-1').checked = false;
+    document.getElementById('correct9').checked = false;
+ 
+}
+</script>
